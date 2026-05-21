@@ -6,32 +6,32 @@
 /* CSS VARIABLES */
 :root {
   /* Brand Palette */
-  --ink: #0B2944;
-  --paper: #F5F4EE;
-  --ocean: #5090B0;
-  --sage: #6BA59A;
-  --soil: #5B4A35;
+  --ink: #1A2D4A;
+  --paper: #F0EDE6;
+  --ocean: #5B8B8A; /* Kept variable name ocean to minimize refactoring, but using teal value */
+  --sage: #6B9080;
+  --soil: #6B4F3A;
   
   /* Extended Palette */
-  --ink-light: #1A3A5C;
-  --ink-lighter: #2A4A6C;
-  --paper-warm: #FAF9F4;
-  --paper-dark: #E8E7E1;
-  --ocean-light: #6AA8C8;
-  --sage-light: #8BC5B8;
-  --soil-light: #7B6A55;
+  --ink-light: #2D3E5B;
+  --ink-lighter: #3F4B5E;
+  --paper-warm: #E8E5DC;
+  --paper-dark: #DED9CC;
+  --ocean-light: #7BA1A1;
+  --sage-light: #8BA89C;
+  --soil-light: #846852;
   
   /* Functional Colors */
   --text-primary: var(--ink);
-  --text-secondary: #4A5A6A;
-  --text-tertiary: #6A7A8A;
-  --text-muted: #8A9AAA;
+  --text-secondary: #3F4B5E;
+  --text-tertiary: #5A7A95;
+  --text-muted: #7A7670;
   --bg-primary: var(--paper);
   --bg-secondary: var(--paper-warm);
   --bg-tertiary: #FFFFFF;
-  --border-light: rgba(11, 41, 68, 0.08);
-  --border-medium: rgba(11, 41, 68, 0.15);
-  --border-dark: rgba(11, 41, 68, 0.25);
+  --border-light: rgba(26, 45, 74, 0.08);
+  --border-medium: rgba(26, 45, 74, 0.15);
+  --border-dark: rgba(26, 45, 74, 0.25);
   
   /* Typography */
   --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -173,7 +173,7 @@ a:hover {
   right: 0;
   height: var(--nav-height);
   z-index: 1000;
-  background: rgba(245, 244, 238, 0.85);
+  background: rgba(240, 237, 230, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-light);
@@ -181,18 +181,45 @@ a:hover {
 }
 
 .nav.scrolled {
-  background: rgba(245, 244, 238, 0.95);
+  background: rgba(240, 237, 230, 0.95);
   box-shadow: var(--shadow-sm);
 }
 
 .nav-inner {
   max-width: var(--max-width-wide);
   margin: 0 auto;
+  padding: 0 var(--spacing-md);
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--space-xl);
+  position: relative;
+  z-index: 2;
+}
+
+.header-motif {
+  position: absolute;
+  top: -80px;
+  right: -50px;
+  width: 400px;
+  height: 400px;
+  background-image: url('assets/brand/header-motif.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .header-motif {
+    width: 250px;
+    height: 250px;
+    top: -50px;
+    right: -30px;
+  }
 }
 
 .nav-logo {
