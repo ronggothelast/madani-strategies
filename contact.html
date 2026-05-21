@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Madani Strategies</title>
+<meta name="description" content="Let's talk about your challenge. Honest assessment of your context without generic pitch decks.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%230B2944'/%3E%3Ccircle cx='24' cy='20' r='7' fill='none' stroke='%235090B0' stroke-width='2'/%3E%3Cline x1='24' y1='27' x2='24' y2='38' stroke='%236BA59A' stroke-width='2'/%3E%3Cline x1='14' y1='32' x2='24' y2='38' stroke='%236BA59A' stroke-width='2'/%3E%3Cline x1='34' y1='32' x2='24' y2='38' stroke='%236BA59A' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="global.css">
+<link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="18" r="8" stroke="#5090B0" stroke-width="2" fill="none"/>
+        <line x1="24" y1="26" x2="24" y2="38" stroke="#6BA59A" stroke-width="2"/>
+        <line x1="13" y1="33" x2="24" y2="38" stroke="#6BA59A" stroke-width="2"/>
+        <line x1="35" y1="33" x2="24" y2="38" stroke="#6BA59A" stroke-width="2"/>
+        <circle cx="24" cy="18" r="3" fill="#5090B0"/>
+      </svg>
+      <span class="nav-wordmark">Madani Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="impact.html" class="nav-link">Impact</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link active nav-cta">Talk to Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTACT CONTENT -->
+<section class="contact-page">
+  <div class="section-inner contact-grid">
+    <div class="contact-text reveal">
+      <h1 class="page-headline">Let's talk about<br>your challenge.</h1>
+      <p class="page-sub">We don't start with a service package. We start with your situation. Tell us what you're facing and we'll tell you honestly whether we can help.</p>
+      
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-label mono">Email</div>
+          <a href="mailto:hello@madanistrategies.com" class="contact-value">hello@madanistrategies.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label mono">Phone</div>
+          <a href="tel:+628131434485" class="contact-value">+62 813-1434-4485</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label mono">Office Address</div>
+          <p class="contact-value">Jl. Mesjid Al Hidayah No.14A,<br>Pasar Minggu, South Jakarta 12520</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-form-wrapper reveal">
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Form submission simulation. In production, connect to an endpoint.');">
+        <div class="form-group">
+          <label for="name" class="mono">Name</label>
+          <input type="text" id="name" required placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <label for="email" class="mono">Email</label>
+          <input type="email" id="email" required placeholder="name@company.com">
+        </div>
+        <div class="form-group">
+          <label for="organization" class="mono">Organization</label>
+          <input type="text" id="organization" placeholder="Company / NGO / Agency">
+        </div>
+        <div class="form-group">
+          <label for="message" class="mono">Message</label>
+          <textarea id="message" required rows="5" placeholder="Tell us about the challenge you are facing..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">
+        <svg width="24" height="24" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="18" r="8" stroke="#5090B0" stroke-width="2" fill="none"/>
+          <line x1="24" y1="26" x2="24" y2="38" stroke="#6BA59A" stroke-width="2"/>
+          <line x1="13" y1="33" x2="24" y2="38" stroke="#6BA59A" stroke-width="2"/>
+          <line x1="35" y1="33" x2="24" y2="38" stroke="#6BA59A" stroke-width="2"/>
+          <circle cx="24" cy="18" r="3" fill="#5090B0"/>
+        </svg>
+        <span class="nav-wordmark">Madani Strategies</span>
+      </a>
+      <p class="footer-tagline serif-italic">Connecting Growth to Community Impact</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title mono">Navigate</div>
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="services.html" class="footer-link">Services</a>
+        <a href="impact.html" class="footer-link">Impact</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title mono">Services</div>
+        <a href="services.html#strategic" class="footer-link">Strategic Impact</a>
+        <a href="services.html#trade" class="footer-link">Enabling Trade</a>
+        <a href="services.html#capacity" class="footer-link">Capacity Building</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title mono">Contact</div>
+        <a href="mailto:hello@madanistrategies.com" class="footer-link">hello@madanistrategies.com</a>
+        <a href="tel:+628131434485" class="footer-link">+62 813-1434-4485</a>
+        <p class="footer-address">Jl. Mesjid Al Hidayah No.14A,<br>Pasar Minggu, South Jakarta 12520</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span class="mono footer-legal">&copy; 2026 Madani Strategies. Affiliated with Yayasan Madani Berkelanjutan.</span>
+      <span class="mono footer-legal">madanistrategies.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="global.js"></script>
+</body>
+</html>
