@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+/* ╔════════════════════════════════════════════════════════════════╗
+   ║  MADANI STRATEGIES — BRAND DESIGN SYSTEM                       ║
+   ║                                                                  ║
+   ║  Palette derived from: logo emblem + botanical motif paper.    ║
+   ║  Typography: Geist (display) + Plus Jakarta Sans (body).       ║
+   ║  Tone: refined, organic-corporate, sustainability advisory.    ║
+   ╚════════════════════════════════════════════════════════════════╝ */
+
+:root {
+	/* Foundation — paper & text */
+	--paper: #F0EDE6;
+	--paper-soft: #E8E5DC;
+	--paper-warm: #DED9CC;
+	--ink: #1A2D4A;          /* Navy deep — wordmark color */
+	--ink-soft: #3F4B5E;
+	--ink-mute: #7A7670;     /* Stone — body muted */
+
+	/* Brand accents from logo */
+	--teal: #5B8B8A;         /* Hero accent (logo center) */
+	--teal-soft: rgba(91, 139, 138, 0.1);
+	--sage: #6B9080;         /* Secondary accent (logo right) */
+	--dusty-blue: #5A7A95;   /* Tertiary (logo left) */
+	--earth: #6B4F3A;        /* Grounding (logo base) */
+
+	/* Rules */
+	--rule: rgba(26, 45, 74, 0.12);
+	--rule-soft: rgba(26, 45, 74, 0.06);
+	--rule-strong: rgba(26, 45, 74, 0.25);
+}
+
+/* Reset */
+html, body {
+	width: 100%;
+	min-height: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+html { scroll-behavior: smooth; }
+body {
+	background: var(--paper);
+	color: var(--ink);
+	font-family: 'Geist', system-ui, sans-serif;
+	line-height: 1.5;
+}
+
+::selection { background: var(--ink); color: var(--paper); }
+
+/* Subtle paper grain — gives premium tactile feel */
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	opacity: 0.025;
+	pointer-events: none;
+	z-index: 1;
+	mix-blend-mode: multiply;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+	font-family: 'Geist', sans-serif;
+	font-weight: 700;
+	letter-spacing: -0.035em;
+	line-height: 0.98;
+	color: var(--ink);
+}
+
+.lbl {
+	font-family: 'Geist Mono', 'JetBrains Mono', monospace;
+	font-size: 0.7rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: var(--ink-mute);
+}
+
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Page wrapper */
+.page-root {
+	background: var(--paper);
+	color: var(--ink);
+	min-height: 100vh;
+	overflow-x: clip;
+	position: relative;
+	z-index: 2;
+}
+
+/* ─── HEADER MOTIF — botanical decoration, agency-tier ─── */
+.header-motif {
+	position: absolute;
+	top: 50%;
+	right: 80px;
+	transform: translateY(-50%);
+	width: 400px;
+	height: 400px;
+	background-image: url('/assets/brand/header-motif-nobg.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0.20;
+	mix-blend-mode: normal;
+	pointer-events: none;
+	z-index: 0;
+	filter: brightness(0.5) sepia(0.3);
+	/* Positioned center-right of header, vertically centered */
+}
+
+/* Hero motif — continuity thread from header into hero */
+.hero-motif {
+	position: absolute;
+	top: -80px;
+	right: -60px;
+	width: 650px;
+	height: 650px;
+	background-image: url('/assets/brand/header-motif-nobg.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0.07;
+	mix-blend-mode: normal;
+	pointer-events: none;
+	z-index: 0;
+	filter: invert(1) contrast(0.7);
+}
+
+@media (max-width: 1024px) {
+	.header-motif {
+		width: 300px;
+		height: 300px;
+		right: 50px;
+		opacity: 0.18;
+	}
+	.hero-motif {
+		width: 460px;
+		height: 460px;
+		opacity: 0.06;
+	}
+}
+
+@media (max-width: 768px) {
+	.header-motif {
+		width: 220px;
+		height: 220px;
+		right: 30px;
+		opacity: 0.15;
+	}
+	.hero-motif {
+		display: none;
+	}
+}
+
+/* Section ribbons can use bg variations */
+.bg-paper-soft { background: var(--paper-soft); }
+.bg-paper-warm { background: var(--paper-warm); }
+
+/* Brand color utilities (non-Tailwind, since we use CSS vars) */
+.text-teal { color: var(--teal); }
+.text-sage { color: var(--sage); }
+.text-earth { color: var(--earth); }
+.text-ink { color: var(--ink); }
+.text-ink-soft { color: var(--ink-soft); }
+.text-ink-mute { color: var(--ink-mute); }
+.bg-teal { background: var(--teal); }
+.bg-ink { background: var(--ink); color: var(--paper); }
+.border-rule { border-color: var(--rule); }
+
+/* Smooth fade-up entry */
+@keyframes fadeUp {
+	0% { opacity: 0; transform: translateY(16px); }
+	100% { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.fade-up-1 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
+.fade-up-2 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; }
+.fade-up-3 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
